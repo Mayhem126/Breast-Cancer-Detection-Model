@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div class="page">
+        <h1>Breast Cancer Prediction</h1>
+
+        <form action="{{ url_for('predict')}}"method="post">
+            <div id="input_area">
+                <div class="inputs">
+                    <input class="input" type="text" name="mean_radius" placeholder="Mean Radius" required="required" />
+                    <input class="input" type="text" name="mean_texture" placeholder="Mean Texture" required="required" />
+                    <input class="input" type="text" name="mean_perimeter" placeholder="Mean Perimeter" required="required" />
+                    <input class="input" type="text" name="mean_area" placeholder="Mean Area" required="required" />
+                    <input class="input" type="text" name="mean_smoothness" placeholder="Mean Smoothness" required="required" />
+                    <input class="input" type="text" name="mean_compactness" placeholder="Mean Compactness" required="required" />
+                    <input class="input" type="text" name="mean_concavity" placeholder="Mean Concavity" required="required" />
+                    <input class="input" type="text" name="mean_concave_points" placeholder="Mean Concave Points" required="required" />
+                    <input class="input" type="text" name="mean_symmetry" placeholder="Mean Symmetry" required="required" />
+                    <input class="input" type="text" name="mean_fractal_dimension" placeholder="Mean Fractal Dimension" required="required" />
+                </div>
+            </div>
+                      
+            <div class="button">
+                <button type="submit" id="button">Predict</button>
+            </div>        
+        </form>  
+        <br><br>    
+        <div>
+            <h2>{{ prediction_text }}</h2>            
+        </div>
+        
+    </div>
+    
+</body>
+</html>
